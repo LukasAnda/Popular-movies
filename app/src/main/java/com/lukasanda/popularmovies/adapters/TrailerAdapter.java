@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.lukasanda.popularmovies.R;
 import com.lukasanda.popularmovies.data.Trailer;
+import com.lukasanda.popularmovies.utils.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,14 +58,17 @@ public class TrailerAdapter extends RecyclerView.Adapter<TrailerAdapter.ViewHold
         
         float paddingRight = 0;
         if (position + 1 != getItemCount()) {
-            paddingRight = context.getResources().getDimension(R.dimen.detail_horizontal_padding) / 2;
+            paddingRight = context.getResources().getDimension(R.dimen.detail_horizontal_padding)
+                    / 2;
         }
         
         holder.mView.setPadding((int) paddingLeft, 0, (int) paddingRight, 0);
         
         holder.mTrailer = trailer;
         
-        String thumbnailUrl = "http://img.youtube.com/vi/" + trailer.getKey() + "/0.jpg";
+        String thumbnailUrl = Constants.YOUTUBE_IMAGE_URL_1
+                + trailer.getKey()
+                + Constants.YOUTUBE_IMAGE_URL_2;
         Glide.with(context)
                 .load(thumbnailUrl)
                 .into(holder.mThumbnailView);

@@ -12,6 +12,7 @@ import com.bumptech.glide.Glide;
 import com.lukasanda.popularmovies.R;
 import com.lukasanda.popularmovies.data.Movie;
 import com.lukasanda.popularmovies.database.MovieContract;
+import com.lukasanda.popularmovies.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,7 +50,8 @@ public class MovieAdapter
                 .inflate(R.layout.movie_list_item, parent, false);
         
         //Some magical formula that keeps the images in required ratio
-        view.getLayoutParams().height = (int) (parent.getWidth() / 2 * 1.5);
+        int numberOfCols = Utils.calculateNoOfColumns(parent.getContext());
+        view.getLayoutParams().height = (int) (parent.getWidth() / numberOfCols * 1.5);
         
         return new ViewHolder(view);
     }

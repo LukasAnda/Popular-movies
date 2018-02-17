@@ -9,4 +9,6 @@ public class Constants {
     public static final String BACKDROP_DOWNLOAD_URL = "http://image.tmdb.org/t/p/original";
     public static final String YOUTUBE_WATCH_URL = "http://www.youtube.com/watch?v=";
     public static final String BASE_URL = "http://api.themoviedb.org/3/";
+    public static final String YOUTUBE_IMAGE_URL_1 = "http://img.youtube.com/vi/";
+    public static final String YOUTUBE_IMAGE_URL_2 = "/0.jpg";
 }

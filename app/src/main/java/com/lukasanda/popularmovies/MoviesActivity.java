@@ -1,5 +1,6 @@
 package com.lukasanda.popularmovies;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
@@ -12,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -21,6 +23,7 @@ import com.lukasanda.popularmovies.adapters.MovieAdapter;
 import com.lukasanda.popularmovies.data.Movie;
 import com.lukasanda.popularmovies.database.MovieContract;
 import com.lukasanda.popularmovies.utils.NetworkUtils;
+import com.lukasanda.popularmovies.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,7 +57,7 @@ public class MoviesActivity extends AppCompatActivity implements MovieAdapter.Ca
         mToolbar.setTitle(R.string.title_movie_list);
         setSupportActionBar(mToolbar);
         
-        mRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+        mRecyclerView.setLayoutManager(new GridLayoutManager(this, Utils.calculateNoOfColumns(this)));
         mAdapter = new MovieAdapter(this, new ArrayList<Movie>(), this);
         mRecyclerView.setAdapter(mAdapter);
         prefs = PreferenceManager.getDefaultSharedPreferences(this);
