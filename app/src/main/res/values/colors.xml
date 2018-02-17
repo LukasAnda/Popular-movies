@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?><!-- Created by lukas on 2/16/2018. -->
+<resources>
+    <color name="colorPrimary">#212121</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#d32f2f</color>
+    <color name="empty_view_text_color">#BDBDBD</color>
+    <color name="movie_text_color">@android:color/black</color>
+    <color name="review_text_color">@android:color/black</color>
+    <color name="red">#F44336</color>
+</resources>
